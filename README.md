@@ -1,4 +1,6 @@
-# clustering
+Help message:
+
+```
 usage: k-means.py [-h] [--nocache] [--distance DISTANCE] [--scale SCALE]
                   input output_bucket output_path k
 
@@ -15,3 +17,11 @@ optional arguments:
   --nocache            Persist RDDs
   --distance DISTANCE  Distance measure [euclidian|giant]
   --scale SCALE        Scale to plot on [world|usa]
+```
+
+example use:
+
+```
+spark-submit k-means.py s3://cleaned-geo-final/clean_devicestatus.txt geo-final small/5/euclidian/nocache.png 5 \
+			--scale usa --distance euclidian --nocache
+```
